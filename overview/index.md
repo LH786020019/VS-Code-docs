@@ -2,7 +2,7 @@
  * @Author: haoluo
  * @Date: 2019-07-22 10:20:55
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-22 11:58:54
+ * @LastEditTime: 2019-07-22 16:35:25
  * @Description: file content
  -->
 # 概述
@@ -42,28 +42,28 @@
 
 ### 3. 第一步
 要最大限度地利用 Visual Studio Code，可以从回顾几个介绍性主题开始：
-- [介绍视频](https://code.visualstudio.com/docs/getstarted/introvideos) —— 开始您的旅程与VS代码通过这些介绍视频。
-- [安装](https://code.visualstudio.com/docs/setup/setup-overview) —— 为您的平台安装VS代码，并根据您的开发需求配置工具集。
-- [用户界面](https://code.visualstudio.com/docs/getstarted/userinterface) —— 介绍VS代码编辑器的基本UI、命令和特性。
-- [设置](https://code.visualstudio.com/docs/getstarted/settings) —— 为你喜欢的工作方式定制VS代码。
-- [语言](https://code.visualstudio.com/docs/languages/overview) —— 了解VS代码对您最喜欢的编程语言的支持。
-- [Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) —— 本教程让您快速运行和调试一个Node.js web应用程序。
-- [提示和技巧](https://code.visualstudio.com/docs/getstarted/tips-and-tricks) —— 加入提示和技巧，成为VS代码的高级用户。
-- [Azure](https://code.visualstudio.com/docs/azure/extensions) —— VS代码非常适合将web应用程序部署到云上。
-- [扩展API](https://code.visualstudio.com/api) —— 学习如何编写VS代码扩展。
-- [为什么VS代码?](https://code.visualstudio.com/docs/editor/whyvscode) —— 阅读有关VS代码的设计理念和架构。
+- [介绍视频](https://code.visualstudio.com/docs/getstarted/introvideos) —— 通过这些介绍视频开始您与 VS Code 的旅程。
+- [安装](https://code.visualstudio.com/docs/setup/setup-overview) —— 为您的平台安装 VS Code ，并根据您的开发需求配置工具集。
+- [用户界面](https://code.visualstudio.com/docs/getstarted/userinterface) —— 介绍 VS Code 编辑器的基本 UI、命令和特性。
+- [设置](https://code.visualstudio.com/docs/getstarted/settings) —— 为你喜欢的工作方式自定义 VS Code 。
+- [语言](https://code.visualstudio.com/docs/languages/overview) —— 了解 VS Code 对您最喜欢的编程语言的支持。
+- [Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) —— 本教程让您快速运行和调试一个 `Node.js` web应用程序。
+- [提示和技巧](https://code.visualstudio.com/docs/getstarted/tips-and-tricks) —— 加入提示和技巧，成为一个 VS Code 的高级用户。
+- [Azure](https://code.visualstudio.com/docs/azure/extensions) ——  VS Code 非常适合将 web 应用程序部署到云上。
+- [扩展API](https://code.visualstudio.com/api) —— 学习如何编写 VS Code 扩展。
+- [为什么选择 VS Code ?](https://code.visualstudio.com/docs/editor/whyvscode) —— 阅读有关 VS Code 的设计理念和架构。
 
 ### 4. 键盘快捷键
 使用 VS Code 的键盘快捷键提高您的工作效率。
-- [键盘快捷键参考表]() —— 学习常用的键盘快捷键。
-- [Keymap扩展]() —— 更改VS代码的键盘快捷键以匹配另一个编辑器。
-- [自定义键盘快捷键]() —— 修改默认键盘快捷键。
+- [键盘快捷键参考表](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference) —— 学习常用的键盘快捷键。
+- [Keymap扩展](https://code.visualstudio.com/docs/getstarted/keybindings#_keymap-extensions) —— 更改 VS Code 的键盘快捷键以匹配另一个编辑器。
+- [自定义键盘快捷键](https://code.visualstudio.com/docs/getstarted/keybindings#_customizing-shortcuts) —— 修改默认键盘快捷键。
 
 ### 5. 下载
-下载VS代码 —— 快速找到适合您平台的安装(Windows、macOS和Linux)。
+- [下载 VS Code](https://code.visualstudio.com/download)  —— 快速找到适合您平台的安装(Windows、macOS 和 Linux)。
 
 ### 6. 隐私
-默认情况下，VS代码会自动更新到新版本，并收集使用数据和崩溃报告信息。你可以选择不使用这些默认值，方法如下：
-- [如何禁用自动更新?]()
-- [如何禁用崩溃报告?]()
-- [如何禁用使用报告?]()
+默认情况下，VS Code 会自动更新到新版本，并收集使用数据和崩溃报告信息。你可以选择不使用这些默认设置，方法如下：
+- [如何禁用自动更新?](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates)
+- [如何禁用崩溃报告?](https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-crash-reporting)
+- [如何禁用使用报告?](https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting)
