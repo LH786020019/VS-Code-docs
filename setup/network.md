@@ -2,9 +2,17 @@
  * @Author: haoluo
  * @Date: 2019-07-23 09:06:37
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-23 15:34:14
+ * @LastEditTime: 2019-07-23 17:43:48
  * @Description: file Network
  -->
+
+- [Visual Studio Code 上的网络连接](#visual-studio-code-%e4%b8%8a%e7%9a%84%e7%bd%91%e7%bb%9c%e8%bf%9e%e6%8e%a5)
+  - [1. 常见的主机名](#1-%e5%b8%b8%e8%a7%81%e7%9a%84%e4%b8%bb%e6%9c%ba%e5%90%8d)
+  - [2. 代理服务器支持](#2-%e4%bb%a3%e7%90%86%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%94%af%e6%8c%81)
+    - [2.1 认证代理](#21-%e8%ae%a4%e8%af%81%e4%bb%a3%e7%90%86)
+    - [2.2 SSL 证书](#22-ssl-%e8%af%81%e4%b9%a6)
+  - [3. 遗留代理服务器支持](#3-%e9%81%97%e7%95%99%e4%bb%a3%e7%90%86%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%94%af%e6%8c%81)
+  - [4. 故障排除](#4-%e6%95%85%e9%9a%9c%e6%8e%92%e9%99%a4)
 
 ## Visual Studio Code 上的网络连接
 
