@@ -2,7 +2,7 @@
  * @Author: haoluo
  * @Date: 2019-07-22 10:20:55
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-23 12:16:14
+ * @LastEditTime: 2019-07-23 15:25:05
  * @Description: file content
  -->
 
@@ -23,15 +23,19 @@
 打印调试已经成为历史。使用您的终端工具在 VS Code 中[调试](https://code.visualstudio.com/docs/editor/debugging)。
 
 #### 1.3 快速、强大的编辑
+
 [Linting](https://code.visualstudio.com/docs/languages/javascript#_linters)、[多光标编辑](https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor)、[参数提示](https://code.visualstudio.com/docs/editor/intellisense#_intellisense-features)和其他强大的编辑功能。
 
 #### 1.4 代码导航和重构
+
 使用 [peek](https://code.visualstudio.com/docs/editor/editingevolved#_peek) 和[导航到定义](https://code.visualstudio.com/docs/editor/editingevolved#_go-to-definition)快速浏览源代码。
 
 #### 1.5 产品内源代码控制
-使用编辑器内部的[ SCM 支持](https://code.visualstudio.com/docs/editor/versioncontrol)(包括丰富的Git集成)加快发布周期。
+
+使用编辑器内部的 [SCM 支持](https://code.visualstudio.com/docs/editor/versioncontrol)(包括丰富的Git集成)加快发布周期。
 
 ### 2. 常用扩展
+
 启用其他语言、主题、调试器、命令等。`VS Code` 不断增长的社区分享了他们改进工作流的秘诀。
 
 - [python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) —— Linting、调试(多线程、远程)、智能感知、代码格式化、重构、单元测试、代码片段等等。
@@ -61,16 +65,21 @@
 - [为什么选择 VS Code ?](https://code.visualstudio.com/docs/editor/whyvscode) —— 阅读有关 VS Code 的设计理念和架构。
 
 ### 4. 键盘快捷键
+
 使用 VS Code 的键盘快捷键提高您的工作效率。
+
 - [键盘快捷键参考表](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference) —— 学习常用的键盘快捷键。
 - [Keymap扩展](https://code.visualstudio.com/docs/getstarted/keybindings#_keymap-extensions) —— 更改 VS Code 的键盘快捷键以匹配另一个编辑器。
 - [自定义键盘快捷键](https://code.visualstudio.com/docs/getstarted/keybindings#_customizing-shortcuts) —— 修改默认键盘快捷键。
 
 ### 5. 下载
+
 - [下载 VS Code](https://code.visualstudio.com/download)  —— 快速找到适合您平台的安装(Windows、macOS 和 Linux)。
 
 ### 6. 隐私
+
 默认情况下，VS Code 会自动更新到新版本，并收集使用数据和崩溃报告信息。你可以选择不使用这些默认设置，方法如下：
+
 - [如何禁用自动更新?](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates)
 - [如何禁用崩溃报告?](https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-crash-reporting)
 - [如何禁用使用报告?](https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting)
