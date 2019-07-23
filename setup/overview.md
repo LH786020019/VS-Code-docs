@@ -2,7 +2,7 @@
  * @Author: haoluo
  * @Date: 2019-07-23 09:06:45
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-23 09:33:34
+ * @LastEditTime: 2019-07-23 09:56:42
  * @Description: file content
  -->
 ## 概述：设置 Visual Studio Code
@@ -12,55 +12,56 @@
 VS Code 是一个免费的代码编辑器，可以在 `macOS`、`Linux` 和 `Windows` 操作系统上运行。
 
 遵循以下平台具体指南：
-- [macOS]()
-- [Linux]()
-- [Windows]()
+- [macOS](https://love2.io/@LH786020019/doc/VS-Code-docs/setup/macos.md)
+- [Linux](https://love2.io/@LH786020019/doc/VS-Code-docs/setup/linux.md)
+- [Windows](https://love2.io/@LH786020019/doc/VS-Code-docs/setup/windows.md)
 
-VS Code 是轻量级的，应该在大多数可用的硬件和平台版本上运行。您可以检查系统需求，以检查是否支持您的计算机配置。
+VS Code 是轻量级的，应该在大多数可用的硬件和平台版本上运行。您可以检查[系统需求](https://code.visualstudio.com/docs/supporting/requirements)，以检查是否支持您的计算机配置。
 
-更新节奏
-VS Code每个月都会发布一个新版本，包含新特性和重要的bug修复。大多数平台都支持自动更新，当新版本可用时，系统会提示您安装新版本。您还可以通过运行Help >检查更新来手动检查更新。
+### 2. 更新频率
+`VS Code` [每个月](https://code.visualstudio.com/updates)都会发布一个新版本，包含新特性和重要的 bug 修复。大多数平台都支持自动更新，当新版本可用时，系统会提示您安装新版本。您还可以通过运行 `Help > Check for Updates` 来手动检查更新。
 
-注意:如果您喜欢按照自己的时间表更新VS Code ，可以禁用自动更新。
+> 注意：如果您喜欢按照自己的时间更新 VS Code ，可以[禁用自动更新](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates)。
 
-内部人士的每夜构建
-如果您想尝试我们的夜间构建，以便尽早看到新特性或验证bug修复，您可以安装我们的内部构建。内部构建与每月的稳定构建并行安装，您可以在同一台机器上自由地使用它们。内部构建与VS Code 开发团队每天使用的构建是相同的，我们非常感谢人们尝试新特性并提供反馈。
+### 3. 内部预览版构建
+如果您想尝试我们的预览版构建，以便尽早看到新特性或验证 bug 修复，您可以安装我们的[内部构建](https://code.visualstudio.com/insiders)。内部构建与每月的稳定构建并行安装，您可以在同一台机器上自由地使用它们。内部构建与 VS Code 开发团队每天使用的构建是相同的，我们非常感谢人们尝试新特性并提供反馈。
 
-附加组件
-VS Code首先是一个编辑器，并且以占用空间小而自豪。与传统ide不同的是，传统ide倾向于包含除厨房水槽之外的所有东西，您可以根据您关心的开发技术调整您的安装。请务必在阅读平台指南之后阅读附加组件主题，以了解如何定制VS Code 安装。
+### 4. 附加组件
+VS Code 首先是一个编辑器，并且以占用空间小而自豪。与传统 IDEs 不同的是，传统 IDEs 倾向于包含除厨房水槽之外的所有东西，您可以根据您关心的开发技术调整您的安装。请务必在阅读平台指南之后阅读[附加组件](https://love2.io/@LH786020019/doc/VS-Code-docs/setup/addi_comp.md)主题，以了解如何自定义 VS Code 安装。
 
-扩展
-VS Code 扩展允许第三方添加额外的支持:
+### 5. 扩展
+VS Code [扩展](https://love2.io/@LH786020019/doc/VS-Code-docs/user_guide/exten_market.md)允许第三方添加额外的支持：
+- 语言 —— [C++](https://love2.io/@LH786020019/doc/VS-Code-docs/languages/cplusplus.md)、C#、Go、Java、Python
+- 工具 —— ESLint、JSHint、PowerShell
+- 调试器 —— Chrome、PHP XDebug。
+- keymap —— Vim、Sublime Text、IntelliJ、Emacs、Atom、Visual Studio、Eclipse
 
-语言- c++， c#， Go, Java, Python
-工具- ESLint, JSHint, PowerShell
-调试器- Chrome, PHP XDebug。
-keymap - Vim, Sublime Text, IntelliJ, Emacs, Atom, Visual Studio, Eclipse
-扩展集成到VS Code 的UI、命令和任务运行系统中，因此您会发现通过VS Code 的共享接口可以轻松地使用不同的技术。查看VS Code 扩展市场，看看有什么可用。
+扩展集成到 VS Code 的 UI、命令和任务运行系统中，因此您会发现通过 VS Code 的共享接口可以轻松地使用不同的技术。查看 VS Code 扩展 [Marketplace](https://marketplace.visualstudio.com/vscode)，看看有什么可用。
 
-下一个步骤
-一旦你安装和设置VS Code ，这些主题将帮助你了解更多关于VS Code :
+### 6. 下一个步骤
+一旦你安装和设置 VS Code ，这些主题将帮助你了解关于 VS Code 的更多信息：
+- [额外组件](https://love2.io/@LH786020019/doc/VS-Code-docs/setup/addi_comp.md) —— 学习如何安装 `Git`、`Node.js`、`TypeScript` 和类似 `Yeoman` 的工具。
+- [用户界面](https://love2.io/@LH786020019/doc/VS-Code-docs/get_started/user_interface.md) —— VS Code 的快速定位。
+- [基本编辑](https://love2.io/@LH786020019/doc/VS-Code-docs/user_guide/basic_editing.md) —— 了解功能强大的 VS Code 编辑器。
+- [代码导航](https://love2.io/@LH786020019/doc/VS-Code-docs/user_guide/code_navi.md) —— 快速浏览源代码。
+- [调试](https://love2.io/@LH786020019/doc/VS-Code-docs/user_guide/debugging.md) —— 在 VS Code 编辑器中直接调试源代码。
+- [代理服务器支持](https://love2.io/@LH786020019/doc/VS-Code-docs/setup/network.md) —— 配置您的代理设置。
 
-额外组件-学习如何安装Git, Node。js，打字稿和工具，如约曼。
-用户界面- VS Code 的快速定位。
-基本编辑-了解功能强大的VS Code 编辑器。
-代码导航——快速浏览源代码。
-调试——在VS Code 编辑器中直接调试源代码。
-代理服务器支持-配置您的代理设置。
-如果您想快速运行一些东西，请尝试Node.js教程演练，这将让您在几分钟内用VS Code 调试Node.js web应用程序。
+如果您想快速运行一些东西，请尝试 [Node.js 教程](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial)演练，这将让您在几分钟内用 VS Code 调试 Node.js web 应用程序。
 
-常见问题
-VS Code 的系统需求是什么?
-我们有一个系统需求列表。
+### 7. 常见问题
 
-VS Code 有多大?
-VS Code 是一个很小的下载(< 100 MB)，磁盘占用空间小于200 MB，因此您可以快速安装VS Code 并试用它。
+#### 7.1 VS Code 的系统需求是什么?
+我们有一个[系统需求](https://code.visualstudio.com/docs/supporting/requirements)列表。
 
-我如何创建和运行一个新项目?
-VS Code 不包括一个传统的文件>新项目对话框或预安装的项目模板。您需要根据您的开发兴趣添加额外的组件和支架。使用脚手架工具(如Yeoman)和npm包管理器提供的大量模块，您肯定可以找到合适的模板和工具来创建项目。
+#### 7.2 VS Code 有多大?
+VS Code 是一个很小的下载(< 100 MB)，磁盘占用空间小于 200 MB，因此您可以快速安装 VS Code 并试用它。
 
-我如何知道我在运行哪个版本?
-在Linux和Windows上，选择Help > About。在macOS上，使用关于Visual Studio Code 的代码>。
+#### 7.3 我如何创建和运行一个新项目?
+VS Code 不包括一个传统的 `File > New Project` 对话框或预安装的项目模板。您需要根据您的开发兴趣添加[额外的组件](https://love2.io/@LH786020019/doc/VS-Code-docs/setup/addi_comp.md)和脚手架(scaffolders)。使用脚手架工具(如 [Yeoman](http://yeoman.io/))和 [npm](https://www.npmjs.com/) 包管理器提供的大量模块，您肯定可以找到合适的模板和工具来创建项目。
 
-为什么VS Code 说我的安装不受支持?
-VS Code 检测到一些安装文件被修改，可能是通过扩展。重新安装VS Code 将替换受影响的文件。更多细节请参见我们的FAQ主题。
+#### 7.4 我如何知道我在运行哪个版本?
+在 Linux 和 Windows 上，选择 `Help > About`。在 macOS 上，使用 `Code > About Visual Studio Code`。
+
+#### 7.5 为什么 VS Code 说我的安装不受支持?
+VS Code 检测到一些安装文件被修改，很可能是通过一个扩展。重新安装 VS Code 将替换受影响的文件。更多细节请参见我们的 [FAQ](https://code.visualstudio.com/docs/supporting/faq#_installation-appears-to-be-corrupt-unsupported) 主题。
