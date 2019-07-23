@@ -2,9 +2,23 @@
  * @Author: haoluo
  * @Date: 2019-07-23 09:06:45
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-23 15:35:33
+ * @LastEditTime: 2019-07-23 17:51:52
  * @Description: file content
  -->
+
+- [概述：设置 Visual Studio Code](#%e6%a6%82%e8%bf%b0%e8%ae%be%e7%bd%ae-visual-studio-code)
+  - [1. 跨平台](#1-%e8%b7%a8%e5%b9%b3%e5%8f%b0)
+  - [2. 更新频率](#2-%e6%9b%b4%e6%96%b0%e9%a2%91%e7%8e%87)
+  - [3. 内部预览版构建](#3-%e5%86%85%e9%83%a8%e9%a2%84%e8%a7%88%e7%89%88%e6%9e%84%e5%bb%ba)
+  - [4. 附加组件](#4-%e9%99%84%e5%8a%a0%e7%bb%84%e4%bb%b6)
+  - [5. 扩展](#5-%e6%89%a9%e5%b1%95)
+  - [6. 下一个步骤](#6-%e4%b8%8b%e4%b8%80%e4%b8%aa%e6%ad%a5%e9%aa%a4)
+  - [7. 常见问题](#7-%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
+    - [7.1 VS Code 的系统需求是什么?](#71-vs-code-%e7%9a%84%e7%b3%bb%e7%bb%9f%e9%9c%80%e6%b1%82%e6%98%af%e4%bb%80%e4%b9%88)
+    - [7.2 VS Code 有多大?](#72-vs-code-%e6%9c%89%e5%a4%9a%e5%a4%a7)
+    - [7.3 我如何创建和运行一个新项目?](#73-%e6%88%91%e5%a6%82%e4%bd%95%e5%88%9b%e5%bb%ba%e5%92%8c%e8%bf%90%e8%a1%8c%e4%b8%80%e4%b8%aa%e6%96%b0%e9%a1%b9%e7%9b%ae)
+    - [7.4 我如何知道我在运行哪个版本?](#74-%e6%88%91%e5%a6%82%e4%bd%95%e7%9f%a5%e9%81%93%e6%88%91%e5%9c%a8%e8%bf%90%e8%a1%8c%e5%93%aa%e4%b8%aa%e7%89%88%e6%9c%ac)
+    - [7.5 为什么 VS Code 说我的安装不受支持?](#75-%e4%b8%ba%e4%bb%80%e4%b9%88-vs-code-%e8%af%b4%e6%88%91%e7%9a%84%e5%ae%89%e8%a3%85%e4%b8%8d%e5%8f%97%e6%94%af%e6%8c%81)
 
 ## 概述：设置 Visual Studio Code
 

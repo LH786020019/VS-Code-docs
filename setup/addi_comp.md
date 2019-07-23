@@ -2,9 +2,15 @@
  * @Author: haoluo
  * @Date: 2019-07-23 09:06:14
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-23 15:26:04
+ * @LastEditTime: 2019-07-23 17:50:54
  * @Description: file content
  -->
+
+- [附加组件和工具](#%e9%99%84%e5%8a%a0%e7%bb%84%e4%bb%b6%e5%92%8c%e5%b7%a5%e5%85%b7)
+  - [1. 常用的组件](#1-%e5%b8%b8%e7%94%a8%e7%9a%84%e7%bb%84%e4%bb%b6)
+  - [2. VS Code 扩展](#2-vs-code-%e6%89%a9%e5%b1%95)
+  - [3. 附加工具](#3-%e9%99%84%e5%8a%a0%e5%b7%a5%e5%85%b7)
+  - [4. 下一步](#4-%e4%b8%8b%e4%b8%80%e6%ad%a5)
 
 ## 附加组件和工具
 

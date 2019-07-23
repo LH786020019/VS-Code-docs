@@ -2,9 +2,37 @@
  * @Author: haoluo
  * @Date: 2019-07-23 09:06:21
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-23 15:33:01
+ * @LastEditTime: 2019-07-23 17:51:37
  * @Description: file content
  -->
+
+- [Linux 上的 Visual Studio Code](#linux-%e4%b8%8a%e7%9a%84-visual-studio-code)
+  - [1. 安装](#1-%e5%ae%89%e8%a3%85)
+    - [1.1 Snap](#11-snap)
+    - [1.2 基于 Debian 和 Ubuntu 的发行版](#12-%e5%9f%ba%e4%ba%8e-debian-%e5%92%8c-ubuntu-%e7%9a%84%e5%8f%91%e8%a1%8c%e7%89%88)
+    - [1.3 基于 RHEL、Fedora 和 CentOS 的发行版](#13-%e5%9f%ba%e4%ba%8e-rhelfedora-%e5%92%8c-centos-%e7%9a%84%e5%8f%91%e8%a1%8c%e7%89%88)
+    - [1.4 基于 openSUSE 和 SLE 的发行版](#14-%e5%9f%ba%e4%ba%8e-opensuse-%e5%92%8c-sle-%e7%9a%84%e5%8f%91%e8%a1%8c%e7%89%88)
+    - [1.5 用于 Arch Linux 的 AUR 包](#15-%e7%94%a8%e4%ba%8e-arch-linux-%e7%9a%84-aur-%e5%8c%85)
+    - [1.6 用于 NixOS 的 Nix 包(或使用 Nix 包管理器的任何 Linux 发行版)](#16-%e7%94%a8%e4%ba%8e-nixos-%e7%9a%84-nix-%e5%8c%85%e6%88%96%e4%bd%bf%e7%94%a8-nix-%e5%8c%85%e7%ae%a1%e7%90%86%e5%99%a8%e7%9a%84%e4%bb%bb%e4%bd%95-linux-%e5%8f%91%e8%a1%8c%e7%89%88)
+    - [1.7 手动安装 .rpm 包](#17-%e6%89%8b%e5%8a%a8%e5%ae%89%e8%a3%85-rpm-%e5%8c%85)
+  - [2. 更新](#2-%e6%9b%b4%e6%96%b0)
+  - [3. Node.js](#3-nodejs)
+  - [4. 将 VS Code 设置为默认文本编辑器](#4-%e5%b0%86-vs-code-%e8%ae%be%e7%bd%ae%e4%b8%ba%e9%bb%98%e8%ae%a4%e6%96%87%e6%9c%ac%e7%bc%96%e8%be%91%e5%99%a8)
+    - [4.1 xdg-open](#41-xdg-open)
+    - [4.2 Debian alternatives 系统](#42-debian-alternatives-%e7%b3%bb%e7%bb%9f)
+  - [5. 下一步](#5-%e4%b8%8b%e4%b8%80%e6%ad%a5)
+  - [6. 常见问题](#6-%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
+    - [6.1 Azure VM 问题](#61-azure-vm-%e9%97%ae%e9%a2%98)
+    - [6.2 Debian 和移动文件到 trash](#62-debian-%e5%92%8c%e7%a7%bb%e5%8a%a8%e6%96%87%e4%bb%b6%e5%88%b0-trash)
+    - [6.3 “Visual Studio Code 无法在这个大工作区中查看文件更改”(error ENOSPC))](#63-visual-studio-code-%e6%97%a0%e6%b3%95%e5%9c%a8%e8%bf%99%e4%b8%aa%e5%a4%a7%e5%b7%a5%e4%bd%9c%e5%8c%ba%e4%b8%ad%e6%9f%a5%e7%9c%8b%e6%96%87%e4%bb%b6%e6%9b%b4%e6%94%b9error-enospc)
+    - [6.4 我在 Ubuntu 里看不到中文](#64-%e6%88%91%e5%9c%a8-ubuntu-%e9%87%8c%e7%9c%8b%e4%b8%8d%e5%88%b0%e4%b8%ad%e6%96%87)
+    - [6.5 未安装 git 包](#65-%e6%9c%aa%e5%ae%89%e8%a3%85-git-%e5%8c%85)
+    - [6.6 在 Ubuntu 中 code bin 命令不会将窗口带到前台](#66-%e5%9c%a8-ubuntu-%e4%b8%ad-code-bin-%e5%91%bd%e4%bb%a4%e4%b8%8d%e4%bc%9a%e5%b0%86%e7%aa%97%e5%8f%a3%e5%b8%a6%e5%88%b0%e5%89%8d%e5%8f%b0)
+    - [6.7 由于 "/etc/apt/sources.list.d/vscode.list: No such file or directory"，无法安装 .deb 包](#67-%e7%94%b1%e4%ba%8e-%22etcaptsourceslistdvscodelist-no-such-file-or-directory%22%e6%97%a0%e6%b3%95%e5%ae%89%e8%a3%85-deb-%e5%8c%85)
+    - [6.8 无法在 X 转发一个远程窗口时移动或调整窗口大小](#68-%e6%97%a0%e6%b3%95%e5%9c%a8-x-%e8%bd%ac%e5%8f%91%e4%b8%80%e4%b8%aa%e8%bf%9c%e7%a8%8b%e7%aa%97%e5%8f%a3%e6%97%b6%e7%a7%bb%e5%8a%a8%e6%88%96%e8%b0%83%e6%95%b4%e7%aa%97%e5%8f%a3%e5%a4%a7%e5%b0%8f)
+    - [6.9 使用自定义标题栏](#69-%e4%bd%bf%e7%94%a8%e8%87%aa%e5%ae%9a%e4%b9%89%e6%a0%87%e9%a2%98%e6%a0%8f)
+    - [6.10 在编辑器中损坏光标，并启用了显示缩放功能](#610-%e5%9c%a8%e7%bc%96%e8%be%91%e5%99%a8%e4%b8%ad%e6%8d%9f%e5%9d%8f%e5%85%89%e6%a0%87%e5%b9%b6%e5%90%af%e7%94%a8%e4%ba%86%e6%98%be%e7%a4%ba%e7%bc%a9%e6%94%be%e5%8a%9f%e8%83%bd)
+    - [6.11 Repository 更改了它的原始值](#611-repository-%e6%9b%b4%e6%94%b9%e4%ba%86%e5%ae%83%e7%9a%84%e5%8e%9f%e5%a7%8b%e5%80%bc)
 
 ## Linux 上的 Visual Studio Code
 
