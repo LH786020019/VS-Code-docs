@@ -2,13 +2,13 @@
  * @Author: haoluo
  * @Date: 2019-07-22 10:20:55
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-22 16:35:25
+ * @LastEditTime: 2019-07-23 09:26:02
  * @Description: file content
  -->
 # 概述
 
 ## 开始
-`Visual Studio Code` 是一个轻量级但功能强大的源代码编辑器，它运行在您的桌面上，适用于 `Windows`、`macOS` 和 `Linux`。它内置了对 `JavaScript`、`TypeScript` 和 `Node.js` 的支持，并为其他语言(如 `C++`、`C#`、`Java`、`Python`、`PHP`、`Go`)和运行时(如 `.net` 和 `Unity`)提供了丰富的扩展生态系统。从这些[入门视频](https://code.visualstudio.com/docs/introvideos/overview)开始 `VS Code` 之旅。
+`Visual Studio Code` 是一个轻量级但功能强大的源代码编辑器，它运行在您的桌面上，适用于 `Windows`、`macOS` 和 `Linux`。它内置了对 `JavaScript`、`TypeScript` 和 `Node.js` 的支持，并为其他语言(如 `C++`、`C#`、`Java`、`Python`、`PHP`、`Go`)和运行时(如 `.net` 和 `Unity`)提供了丰富的扩展生态系统。从这些[入门视频](https://love2.io/@LH786020019/doc/VS-Code-docs/get_started/intro_videos.md)开始 `VS Code` 之旅。
 
 ### 1. 正在运行的 `Visual Studio Code`
 
