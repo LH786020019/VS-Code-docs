@@ -2,7 +2,7 @@
  * @Author: haoluo
  * @Date: 2019-07-22 10:06:49
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-23 20:14:44
+ * @LastEditTime: 2019-07-24 09:25:33
  * @Description: file content
  -->
 
@@ -48,5 +48,6 @@
 * [远程开发](remote/index.md)
   * [概述](remote/overview.md)
   * [SSH](remote/ssh.md)
-  * [SSH](remote/containers.md)
-  * [SSH](remote/wsl.md)
+  * [Containers](remote/containers.md)
+  * [WSL](remote/wsl.md)
+  * [提示和技巧](remote/tips_tricks.md)

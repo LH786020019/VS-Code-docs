@@ -2,7 +2,7 @@
  * @Author: haoluo
  * @Date: 2019-07-23 19:57:12
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-23 20:12:47
+ * @LastEditTime: 2019-07-23 20:19:36
  * @Description: file content
  -->
 
@@ -20,7 +20,7 @@
 
 要获得这些好处，在本地机器上**不需要源代码**。[远程开发扩展包](https://aka.ms/vscode-remote/download/extension) 中的每个扩展都可以直接在容器中、WSL 中或一个远程机器上运行命令和其他扩展，因此当您运行时，一切都感觉像在在本地运行一样。
 
-！["1"](https://code.visualstudio.com/assets/docs/remote/remote-overview/architecture.png "1")
+![123](https://code.visualstudio.com/assets/docs/remote/remote-overview/architecture.png)
 
 ### 1. 开始
 
@@ -28,14 +28,14 @@
 
 [远程开发扩展包](https://aka.ms/vscode-remote/download/extension) 包括三个扩展。阅读下面的文章来开始学习它们：
 
-- Remote - SSH —— 使用 `SSH` 打开一个远程机器/VM 上的文件夹，连接到任何位置。
-- Remote - Containers —— 使用在容器内(或安装到)的沙箱工具链或基于容器的应用程序来工作。
-- Remote - WSL —— 在 Linux 的 Windows 子系统中获得 Linux 支持的开发经验。
+- [Remote - SSH](https://love2.io/@lh786020019/doc/VS-Code-docs/remote/ssh.md) —— 使用 `SSH` 打开一个远程机器/VM 上的文件夹，连接到任何位置。
+- [Remote - Containers](https://love2.io/@lh786020019/doc/VS-Code-docs/remote/containers.md) —— 使用在容器内(或安装到)的沙箱工具链或基于容器的应用程序来工作。
+- [Remote - WSL](https://love2.io/@lh786020019/doc/VS-Code-docs/remote/wsl.md) —— 在 Linux 的 Windows 子系统中获得 Linux 支持的开发经验。
 
 虽然大多数 VS Code 扩展应该在远程环境中不需要修改就可以工作，但是扩展作者可以在 [支持远程开发方面](https://code.visualstudio.com/api/advanced-topics/remote-extensions) 学到更多。
 
 ### 2. 问题或反馈
 
-参见技巧和技巧或FAQ。
-堆栈溢出搜索。
-添加特性请求或报告问题。
+- 参见 [技巧和技巧](https://code.visualstudio.com/docs/remote/troubleshooting) 或 [FAQ](https://code.visualstudio.com/docs/remote/faq)。
+- 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode-remote) 上搜索。
+- 添加一个 [特性请求](https://aka.ms/vscode-remote/feature-requests) 或 [报告一个问题](https://aka.ms/vscode-remote/issues/new)。
