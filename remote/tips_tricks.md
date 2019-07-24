@@ -2,43 +2,43 @@
  * @Author: haoluo
  * @Date: 2019-07-24 09:38:48
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-24 10:15:39
+ * @LastEditTime: 2019-07-24 11:32:32
  * @Description: file content
  -->
 
 - [远程开发提示和技巧](#%e8%bf%9c%e7%a8%8b%e5%bc%80%e5%8f%91%e6%8f%90%e7%a4%ba%e5%92%8c%e6%8a%80%e5%b7%a7)
   - [1. SSH 提示](#1-ssh-%e6%8f%90%e7%a4%ba)
     - [1.1 配置基于密钥的身份验证](#11-%e9%85%8d%e7%bd%ae%e5%9f%ba%e4%ba%8e%e5%af%86%e9%92%a5%e7%9a%84%e8%ba%ab%e4%bb%bd%e9%aa%8c%e8%af%81)
-    - [1.2 快速启动:SSH密钥](#12-%e5%bf%ab%e9%80%9f%e5%90%af%e5%8a%a8ssh%e5%af%86%e9%92%a5)
-    - [1.3 使用专用密钥提高安全性](#13-%e4%bd%bf%e7%94%a8%e4%b8%93%e7%94%a8%e5%af%86%e9%92%a5%e6%8f%90%e9%ab%98%e5%ae%89%e5%85%a8%e6%80%a7)
-    - [1.4 重用在PuTTYGen中生成的密钥](#14-%e9%87%8d%e7%94%a8%e5%9c%a8puttygen%e4%b8%ad%e7%94%9f%e6%88%90%e7%9a%84%e5%af%86%e9%92%a5)
-    - [1.5 故障排除挂起或失败的连接](#15-%e6%95%85%e9%9a%9c%e6%8e%92%e9%99%a4%e6%8c%82%e8%b5%b7%e6%88%96%e5%a4%b1%e8%b4%a5%e7%9a%84%e8%bf%9e%e6%8e%a5)
-      - [1.5.1 查看 Vs Code 是否在等待提示](#151-%e6%9f%a5%e7%9c%8b-vs-code-%e6%98%af%e5%90%a6%e5%9c%a8%e7%ad%89%e5%be%85%e6%8f%90%e7%a4%ba)
-      - [1.5.2 在远程主机上启用TCP转发](#152-%e5%9c%a8%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e4%b8%8a%e5%90%af%e7%94%a8tcp%e8%bd%ac%e5%8f%91)
-      - [1.5.3 在SSH配置文件中设置ProxyCommand参数](#153-%e5%9c%a8ssh%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e4%b8%ad%e8%ae%be%e7%bd%aeproxycommand%e5%8f%82%e6%95%b0)
-      - [1.5.4 确保远程机器能够访问internet](#154-%e7%a1%ae%e4%bf%9d%e8%bf%9c%e7%a8%8b%e6%9c%ba%e5%99%a8%e8%83%bd%e5%a4%9f%e8%ae%bf%e9%97%aeinternet)
-      - [1.5.5 在远程主机上设置HTTP_PROXY / HTTPS_PROXY](#155-%e5%9c%a8%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e4%b8%8a%e8%ae%be%e7%bd%aehttpproxy--httpsproxy)
-      - [1.5.6 使用noexec安装tmp](#156-%e4%bd%bf%e7%94%a8noexec%e5%ae%89%e8%a3%85tmp)
-      - [1.5.7 检查安装期间是否启动了不同的shell](#157-%e6%a3%80%e6%9f%a5%e5%ae%89%e8%a3%85%e6%9c%9f%e9%97%b4%e6%98%af%e5%90%a6%e5%90%af%e5%8a%a8%e4%ba%86%e4%b8%8d%e5%90%8c%e7%9a%84shell)
+    - [1.2 快速开始：SSH 密钥](#12-%e5%bf%ab%e9%80%9f%e5%bc%80%e5%a7%8bssh-%e5%af%86%e9%92%a5)
+    - [1.3 使用专用密钥(dedicated key)提高安全性](#13-%e4%bd%bf%e7%94%a8%e4%b8%93%e7%94%a8%e5%af%86%e9%92%a5dedicated-key%e6%8f%90%e9%ab%98%e5%ae%89%e5%85%a8%e6%80%a7)
+    - [1.4 重用在 PuTTYGen 中生成的密钥](#14-%e9%87%8d%e7%94%a8%e5%9c%a8-puttygen-%e4%b8%ad%e7%94%9f%e6%88%90%e7%9a%84%e5%af%86%e9%92%a5)
+    - [1.5 对挂起或失败的连接进行故障排除](#15-%e5%af%b9%e6%8c%82%e8%b5%b7%e6%88%96%e5%a4%b1%e8%b4%a5%e7%9a%84%e8%bf%9e%e6%8e%a5%e8%bf%9b%e8%a1%8c%e6%95%85%e9%9a%9c%e6%8e%92%e9%99%a4)
+      - [1.5.1 查看 Vs Code 是否正在一个提示符(prompt)上等待](#151-%e6%9f%a5%e7%9c%8b-vs-code-%e6%98%af%e5%90%a6%e6%ad%a3%e5%9c%a8%e4%b8%80%e4%b8%aa%e6%8f%90%e7%a4%ba%e7%ac%a6prompt%e4%b8%8a%e7%ad%89%e5%be%85)
+      - [1.5.2 在远程主机上启用 TCP 转发](#152-%e5%9c%a8%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e4%b8%8a%e5%90%af%e7%94%a8-tcp-%e8%bd%ac%e5%8f%91)
+      - [1.5.3 在您的 SSH 配置文件中设置 ProxyCommand 参数](#153-%e5%9c%a8%e6%82%a8%e7%9a%84-ssh-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e4%b8%ad%e8%ae%be%e7%bd%ae-proxycommand-%e5%8f%82%e6%95%b0)
+      - [1.5.4 确保远程机器能够访问 internet](#154-%e7%a1%ae%e4%bf%9d%e8%bf%9c%e7%a8%8b%e6%9c%ba%e5%99%a8%e8%83%bd%e5%a4%9f%e8%ae%bf%e9%97%ae-internet)
+      - [1.5.5 在远程主机上设置 HTTP_PROXY / HTTPS_PROXY](#155-%e5%9c%a8%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e4%b8%8a%e8%ae%be%e7%bd%ae-httpproxy--httpsproxy)
+      - [1.5.6 使用 noexec 解决 /tmp 挂载](#156-%e4%bd%bf%e7%94%a8-noexec-%e8%a7%a3%e5%86%b3-tmp-%e6%8c%82%e8%bd%bd)
+      - [1.5.7 检查安装期间是否启动了一个不同的 shell](#157-%e6%a3%80%e6%9f%a5%e5%ae%89%e8%a3%85%e6%9c%9f%e9%97%b4%e6%98%af%e5%90%a6%e5%90%af%e5%8a%a8%e4%ba%86%e4%b8%80%e4%b8%aa%e4%b8%8d%e5%90%8c%e7%9a%84-shell)
       - [1.5.8 连接到为每个连接动态分配机器的系统](#158-%e8%bf%9e%e6%8e%a5%e5%88%b0%e4%b8%ba%e6%af%8f%e4%b8%aa%e8%bf%9e%e6%8e%a5%e5%8a%a8%e6%80%81%e5%88%86%e9%85%8d%e6%9c%ba%e5%99%a8%e7%9a%84%e7%b3%bb%e7%bb%9f)
       - [1.5.9 请与系统管理员联系以获得配置帮助](#159-%e8%af%b7%e4%b8%8e%e7%b3%bb%e7%bb%9f%e7%ae%a1%e7%90%86%e5%91%98%e8%81%94%e7%b3%bb%e4%bb%a5%e8%8e%b7%e5%be%97%e9%85%8d%e7%bd%ae%e5%b8%ae%e5%8a%a9)
-    - [1.6启用备用SSH身份验证方法](#16%e5%90%af%e7%94%a8%e5%a4%87%e7%94%a8ssh%e8%ba%ab%e4%bb%bd%e9%aa%8c%e8%af%81%e6%96%b9%e6%b3%95)
-    - [1.7 设置SSH代理](#17-%e8%ae%be%e7%bd%aessh%e4%bb%a3%e7%90%86)
-      - [1.7.1 窗口:](#171-%e7%aa%97%e5%8f%a3)
+    - [1.6启用备用 SSH 身份验证方法](#16%e5%90%af%e7%94%a8%e5%a4%87%e7%94%a8-ssh-%e8%ba%ab%e4%bb%bd%e9%aa%8c%e8%af%81%e6%96%b9%e6%b3%95)
+    - [1.7 设置 SSH 代理](#17-%e8%ae%be%e7%bd%ae-ssh-%e4%bb%a3%e7%90%86)
+      - [1.7.1 Windows:](#171-windows)
       - [1.7.2 Linux:](#172-linux)
       - [1.7.3 macOS:](#173-macos)
-    - [1.8 修复SSH文件权限错误](#18-%e4%bf%ae%e5%a4%8dssh%e6%96%87%e4%bb%b6%e6%9d%83%e9%99%90%e9%94%99%e8%af%af)
-    - [1.9 本地SSH文件和文件夹权限](#19-%e6%9c%ac%e5%9c%b0ssh%e6%96%87%e4%bb%b6%e5%92%8c%e6%96%87%e4%bb%b6%e5%a4%b9%e6%9d%83%e9%99%90)
-      - [1.9.1 macOS / Linux:](#191-macos--linux)
-      - [1.9.2 窗口:](#192-%e7%aa%97%e5%8f%a3)
-    - [1.10 服务器SSH文件和文件夹权限](#110-%e6%9c%8d%e5%8a%a1%e5%99%a8ssh%e6%96%87%e4%bb%b6%e5%92%8c%e6%96%87%e4%bb%b6%e5%a4%b9%e6%9d%83%e9%99%90)
-    - [1.11 安装受支持的SSH客户机](#111-%e5%ae%89%e8%a3%85%e5%8f%97%e6%94%af%e6%8c%81%e7%9a%84ssh%e5%ae%a2%e6%88%b7%e6%9c%ba)
-    - [1.12 安装受支持的SSH服务器](#112-%e5%ae%89%e8%a3%85%e5%8f%97%e6%94%af%e6%8c%81%e7%9a%84ssh%e6%9c%8d%e5%8a%a1%e5%99%a8)
-    - [1.13 解决在SSH主机上执行Git推送或同步时挂起的问题](#113-%e8%a7%a3%e5%86%b3%e5%9c%a8ssh%e4%b8%bb%e6%9c%ba%e4%b8%8a%e6%89%a7%e8%a1%8cgit%e6%8e%a8%e9%80%81%e6%88%96%e5%90%8c%e6%ad%a5%e6%97%b6%e6%8c%82%e8%b5%b7%e7%9a%84%e9%97%ae%e9%a2%98)
-    - [1.14 使用SSHFS访问远程主机上的文件](#114-%e4%bd%bf%e7%94%a8sshfs%e8%ae%bf%e9%97%ae%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e4%b8%8a%e7%9a%84%e6%96%87%e4%bb%b6)
-      - [1.14.1 macOS / Linux:](#1141-macos--linux)
-      - [1.14.2 窗口:](#1142-%e7%aa%97%e5%8f%a3)
-    - [1.15 使用rsync维护源代码的本地副本](#115-%e4%bd%bf%e7%94%a8rsync%e7%bb%b4%e6%8a%a4%e6%ba%90%e4%bb%a3%e7%a0%81%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%89%af%e6%9c%ac)
+    - [1.8 修复 SSH 文件权限错误](#18-%e4%bf%ae%e5%a4%8d-ssh-%e6%96%87%e4%bb%b6%e6%9d%83%e9%99%90%e9%94%99%e8%af%af)
+    - [1.9 本地 SSH 文件和文件夹权限](#19-%e6%9c%ac%e5%9c%b0-ssh-%e6%96%87%e4%bb%b6%e5%92%8c%e6%96%87%e4%bb%b6%e5%a4%b9%e6%9d%83%e9%99%90)
+      - [1.9.1 macOS / Linux：](#191-macos--linux)
+      - [1.9.2 Windows：](#192-windows)
+    - [1.10 Server SSH 文件和文件夹权限](#110-server-ssh-%e6%96%87%e4%bb%b6%e5%92%8c%e6%96%87%e4%bb%b6%e5%a4%b9%e6%9d%83%e9%99%90)
+    - [1.11 安装一个受支持的 SSH Client](#111-%e5%ae%89%e8%a3%85%e4%b8%80%e4%b8%aa%e5%8f%97%e6%94%af%e6%8c%81%e7%9a%84-ssh-client)
+    - [1.12 安装一个受支持的 SSH Server](#112-%e5%ae%89%e8%a3%85%e4%b8%80%e4%b8%aa%e5%8f%97%e6%94%af%e6%8c%81%e7%9a%84-ssh-server)
+    - [1.13 解决在 SSH 主机上执行 Git push 或 sync 时挂起的问题](#113-%e8%a7%a3%e5%86%b3%e5%9c%a8-ssh-%e4%b8%bb%e6%9c%ba%e4%b8%8a%e6%89%a7%e8%a1%8c-git-push-%e6%88%96-sync-%e6%97%b6%e6%8c%82%e8%b5%b7%e7%9a%84%e9%97%ae%e9%a2%98)
+    - [1.14 使用 SSHFS 访问远程主机上的文件](#114-%e4%bd%bf%e7%94%a8-sshfs-%e8%ae%bf%e9%97%ae%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e4%b8%8a%e7%9a%84%e6%96%87%e4%bb%b6)
+      - [1.14.1 macOS / Linux：](#1141-macos--linux)
+      - [1.14.2 Windows：](#1142-windows)
+    - [1.15 使用 rsync 维护源代码的本地副本](#115-%e4%bd%bf%e7%94%a8-rsync-%e7%bb%b4%e6%8a%a4%e6%ba%90%e4%bb%a3%e7%a0%81%e7%9a%84%e6%9c%ac%e5%9c%b0%e5%89%af%e6%9c%ac)
     - [1.16 清理远程上的 Vs Code 服务器](#116-%e6%b8%85%e7%90%86%e8%bf%9c%e7%a8%8b%e4%b8%8a%e7%9a%84-vs-code-%e6%9c%8d%e5%8a%a1%e5%99%a8)
   - [2. 容器技巧](#2-%e5%ae%b9%e5%99%a8%e6%8a%80%e5%b7%a7)
     - [2.1 Docker桌面的Windows提示](#21-docker%e6%a1%8c%e9%9d%a2%e7%9a%84windows%e6%8f%90%e7%a4%ba)
@@ -92,135 +92,132 @@
 
 提示：PuTTY for Windows 不是一个受支持的 client，但是您可以[转换您的 PuTTYGen 密钥](https://code.visualstudio.com/docs/remote/troubleshooting#_reusing-a-key-generated-in-puttygen)。
 
-#### 1.2 快速启动:SSH密钥
+#### 1.2 快速开始：SSH 密钥
 
-要为远程主机设置基于SSH密钥的身份验证:
+要为远程主机设置基于 SSH 密钥的身份验证:
 
-检查本地计算机上是否已经有SSH密钥。公钥通常位于~/.ssh/id_rsa。在macOS / Linux上发布，并在%USERPROFILE%\.ssh\id_rsa上发布。在Windows上酒吧。
+1. 检查**本地**计算机上是否已经有 SSH 密钥。公钥在 macOS / Linux 上通常位于 `~/.ssh/id_rsa.pub`，在 Windows 上通常位于  `%USERPROFILE%\.ssh\id_rsa.pub`。
 
-如果没有密钥，在本地终端/命令提示符中运行以下命令，生成SSH密钥对：
+    如果没有密钥，在**本地**终端/命令提示符中运行以下命令，生成一个 SSH 密钥对：
 
-```shell
-ssh-keygen -t rsa -b 4096
-```
+    ```shell
+    ssh-keygen -t rsa -b 4096
+    ```
 
-提示:没有ssh-keygen?安装受支持的SSH客户机。
+    > 提示：没有 `ssh-keygen`？安装 [一个受支持的 SSH client](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client)。
 
-添加本地公钥(id_rsa)的内容。到SSH主机上适当的authorized_keys文件。
+2. 添加您本地公钥（ `id_rsa.pub` 文件）的内容到 SSH 主机上适当的 `authorized_keys` 文件。
 
-在macOS / Linux上，在本地终端中运行以下命令，根据需要替换用户名和主机名。
+    在 **macOS/Linux** 上，在**本地终端**中运行以下命令，根据需要替换 `user name` 和 `host name`。
 
-```shell
-ssh-copy-id your-user-name-on-host@host-fqdn-or-ip-goes-here
-```
+    ```shell
+    ssh-copy-id your-user-name-on-host@host-fqdn-or-ip-goes-here
+    ```
 
-在Windows上，在一个本地命令提示符中运行以下命令，根据需要替换REMOTEHOST的值。
+    在 **Windows** 上，在一个**本地命令提示符**中运行以下命令，根据需要替换 `REMOTEHOST` 的值。
 
-```shell
-SET REMOTEHOST=your-user-name-on-host@host-fqdn-or-ip-goes-here
+    ```shell
+    SET REMOTEHOST=your-user-name-on-host@host-fqdn-or-ip-goes-here
 
-scp %USERPROFILE%\.ssh\id_rsa.pub %REMOTEHOST%:~/tmp.pub
-ssh %REMOTEHOST% "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat ~/tmp.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && rm -f ~/tmp.pub"
-```
+    scp %USERPROFILE%\.ssh\id_rsa.pub %REMOTEHOST%:~/tmp.pub
+    ssh %REMOTEHOST% "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat ~/tmp.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && rm -f ~/tmp.pub"
+    ```
 
-#### 1.3 使用专用密钥提高安全性
+#### 1.3 使用专用密钥(dedicated key)提高安全性
 
-虽然跨所有SSH主机使用一个SSH密钥很方便，但是如果任何人获得了对您的私钥的访问权，那么他们也可以访问您的所有主机。可以通过为开发主机创建单独的SSH密钥来防止这种情况。只需遵循以下步骤:
+虽然在所有 SSH 主机之间使用一个 SSH 密钥很方便，但是如果任何人获得了对您的私钥的访问权，那么他们也可以访问您的所有主机。可以通过为您的开发主机创建特定的 SSH 密钥来防止这种情况。只需遵循以下步骤：
 
-在不同的文件中生成一个单独的SSH密钥。
+1. 在一个不同的文件中生成一个特定的 SSH 密钥。
 
-在macOS / Linux上，在本地终端运行以下命令：
+    在 **macOS / Linux** 上，在**本地终端**运行以下命令：
 
-```shell
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remote-ssh
-```
+    ```shell
+    ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remote-ssh
+    ```
 
-在Windows上，在本地命令提示符中运行以下命令：
+    在 **Windows** 上，在**本地命令提示符**中运行以下命令：
 
-```shell
-ssh-keygen -t rsa -b 4096 -f %USERPROFILE%\.ssh\id_rsa-remote-ssh
-```
+    ```shell
+    ssh-keygen -t rsa -b 4096 -f %USERPROFILE%\.ssh\id_rsa-remote-ssh
+    ```
 
-在 Vs Code 中，运行Remote-SSH:打开配置文件…在命令面板(F1)中，选择SSH配置文件，并按如下方式添加(或修改)主机条目：
+2. 在 Vs Code 中，在命令面板(`F1`)中运行 `Remote-SSH: Open Configuration File...`，选择一个 SSH 配置文件，并按如下方式添加(或修改)一个主机条目：
 
-```txt
-Host name-of-ssh-host-here
-    User your-user-name-on-host
-    HostName host-fqdn-or-ip-goes-here
-    IdentityFile ~/.ssh/id_rsa-remote-ssh
-```
+    ```txt
+    Host name-of-ssh-host-here
+        User your-user-name-on-host
+        HostName host-fqdn-or-ip-goes-here
+        IdentityFile ~/.ssh/id_rsa-remote-ssh
+    ```
 
-添加本地id_rsa-remote-ssh的内容。将步骤1中生成的发布文件生成到SSH主机上适当的authorized_keys文件。
+3. 将步骤 1 中生成的本地 `id_rsa-remote-ssh.pub` 文件的内容添加到 **SSH 主机**上适当的 `authorized_keys` 文件。
 
-在macOS / Linux上，在本地终端上运行以下命令，将SSH -host-here的名称替换为步骤2 SSH配置文件中的主机名：
+    在 **macOS / Linux** 上，在**本地终端**上运行以下命令，将 `name-of-ssh-host-here` 替换为步骤 2 设置的 SSH 配置文件中的 `host name`：
 
-```shell
-ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub name-of-ssh-host-here
-```
+    ```shell
+    ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub name-of-ssh-host-here
+    ```
 
-在Windows上，在本地命令提示符中运行以下命令，将SSH -host-here的名称替换为步骤2中的SSH配置文件中的主机名。
+    在 **Windows** 上，在**本地命令提示符**中运行以下命令，将 `name-of-ssh-host-here` 替换为步骤 2 设置的 SSH 配置文件中的 `host name`：
 
-```shell
-SET REMOTEHOST=name-of-ssh-host-here
-SET PATHOFIDENTITYFILE=%USERPROFILE%\.ssh\id_rsa-remote-ssh.pub
+    ```shell
+    SET REMOTEHOST=name-of-ssh-host-here
+    SET PATHOFIDENTITYFILE=%USERPROFILE%\.ssh\id_rsa-remote-ssh.pub
 
-scp %PATHOFIDENTITYFILE% %REMOTEHOST%:~/tmp.pub
-ssh %REMOTEHOST% "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat ~/tmp.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && rm -f ~/tmp.pub"
-```
+    scp %PATHOFIDENTITYFILE% %REMOTEHOST%:~/tmp.pub
+    ssh %REMOTEHOST% "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat ~/tmp.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && rm -f ~/tmp.pub"
+    ```
 
-#### 1.4 重用在PuTTYGen中生成的密钥
+#### 1.4 重用在 PuTTYGen 中生成的密钥
 
-如果使用PuTTYGen为要连接的主机设置SSH公钥身份验证，则需要转换您的私钥，以便其他SSH客户机可以使用它。要做到这一点:
+如果您使用 `PuTTYGen` 为要连接的主机设置 SSH 公钥身份验证，则您需要转换您的私钥，以便其他 SSH client 可以使用它。要做到这一点：
 
-在本地打开PuTTYGen并加载要转换的私钥。
+1. 在**本地**打开 `PuTTYGen` 并加载要转换的私钥。
+2. 从应用程序菜单中选择 `Conversions > Export OpenSSH key`，将转换后的密钥保存到**本地**位置，例如 `%USERPROFILE%\.ssh`。
+3. 验证导出的密钥文件上的**本地**权限，只将 **完全控制(Full Control)** 授予您的用户、Administrators 和 SYSTEM。
+4. 在 Vs Code 中，在命令面板(`F1`)中运行 `Remote-SSH: Open Configuration File...`，选择一个您想更改的 SSH 配置文件，并在配置文件中添加(或修改)一个主机条目，如下所示：
 
-从应用程序菜单中选择Conversions > Export OpenSSH key。将转换后的密钥保存到本地位置，例如%USERPROFILE%\.ssh。
+    ```txt
+    Host name-of-ssh-host-here
+        User your-user-name-on-host
+        HostName host-fqdn-or-ip-goes-here
+        IdentityFile C:\path\to\your\exported\private\keyfile
+    ```
 
-验证导出密钥文件上的本地权限只将完全控制权授予用户、管理员和系统。
+#### 1.5 对挂起或失败的连接进行故障排除
 
-在 Vs Code 中，运行Remote-SSH:打开配置文件…在命令面板(F1)中，选择要更改的SSH配置文件，并在配置文件中添加(或修改)一个主机条目，如下所示：
+如果您在尝试连接时遇到 Vs Code 挂起(hanging)的问题(并且可能超时)，您可以做一些事情来尝试解决这个问题。
 
-```txt
-Host name-of-ssh-host-here
-    User your-user-name-on-host
-    HostName host-fqdn-or-ip-goes-here
-    IdentityFile C:\path\to\your\exported\private\keyfile
-```
+##### 1.5.1 查看 Vs Code 是否正在一个提示符(prompt)上等待
 
-#### 1.5 故障排除挂起或失败的连接
+在 Vs Code 中启用 `remote.SSH.showLoginTerminal` [设置](https://love2.io/@lh786020019/doc/VS-Code-docs/get_started/settings.md) 并重试。如果提示您输入一个密码或令牌，请参阅 [启用备用 SSH 身份验证方法](https://code.visualstudio.com/docs/remote/troubleshooting#_enabling-alternate-ssh-authentication-methods) 以了解有关减少提示频率的详细信息。
 
-如果您在尝试连接时遇到 Vs Code 挂起的问题(并且可能超时)，您可以做一些事情来尝试解决这个问题。
+##### 1.5.2 在远程主机上启用 TCP 转发
 
-##### 1.5.1 查看 Vs Code 是否在等待提示
-
-启用remote.SSH。在 Vs Code 中设置showLoginTerminal并重试。如果提示您输入密码或令牌，请参阅启用备用SSH身份验证方法以了解有关减少提示频率的详细信息。
-
-##### 1.5.2 在远程主机上启用TCP转发
-
-远程SSH扩展使用SSH隧道来促进与主机的通信。在某些情况下，这可能在SSH服务器上禁用。要查看是否存在此问题，请打开output窗口中的Remote - SSH类别，并检查以下消息：
+Remote - SSH 扩展使用 SSH tunnel 来促进与主机的通信。在某些情况下，这可能在 SSH server 上禁用。要查看是否存在此问题，请在输出窗口中打开 `Remote - SSH` 类别，并检查以下消息：
 
 ```txt
 open failed: administratively prohibited: open failed
 ```
 
-如果您确实看到该消息，请按照以下步骤更新SSH服务器的sshd配置:
+如果您确实看到该消息，请按照以下步骤更新您的 SSH server 的 [sshd 配置](https://www.ssh.com/ssh/sshd_config/):
 
-在SSH主机上的编辑器(如vim、nano或pico)中打开/etc/ SSH / ssh_config(不是本地的)。
-添加设置AllowTcpForwarding yes。
-重启SSH服务器(在Ubuntu上运行sudo systemctl Restart sshd)。
-重试。
+1. 在 **SSH 主机**(不是本地的)上的一个编辑器(如 `vim`、`nano` 或 `pico`)中打开 `/etc/ssh/sshd_config` 文件。
+2. 添加设置 `AllowTcpForwarding yes`。
+3. 重启 SSH server（在 Ubuntu 上运行 `sudo systemctl restart sshd`）。
+4. 重试。
 
-##### 1.5.3 在SSH配置文件中设置ProxyCommand参数
+##### 1.5.3 在您的 SSH 配置文件中设置 ProxyCommand 参数
 
-如果您在代理的后面，并且无法连接到SSH主机，那么您可能需要在本地SSH配置文件中为主机使用ProxyCommand参数。您可以阅读这篇SSH ProxyCommand文章，了解它的使用示例。
+如果您在代理的后面，并且无法连接到 SSH 主机，那么您可能需要在**本地** [SSH 配置文件](https://linux.die.net/man/5/ssh_config) 中为您的主机使用 `ProxyCommand` 参数。您可以阅读这篇 [SSH ProxyCommand 文章](https://www.cyberciti.biz/faq/linux-unix-ssh-proxycommand-passing-through-one-host-gateway-server/)，了解它的使用示例。
 
-##### 1.5.4 确保远程机器能够访问internet
+##### 1.5.4 确保远程机器能够访问 internet
 
-远程机器必须能够访问internet才能从市场下载 Vs Code 服务器和扩展。有关连接需求的详细信息，请参阅FAQ。
+远程机器必须能够访问 internet 才能从市场下载 Vs Code Server 和扩展。有关连接需求的详细信息，请参阅 [FAQ](https://code.visualstudio.com/docs/remote/faq#_what-are-the-connectivity-requirements-for-vs-code-server)。
 
-##### 1.5.5 在远程主机上设置HTTP_PROXY / HTTPS_PROXY
+##### 1.5.5 在远程主机上设置 HTTP_PROXY / HTTPS_PROXY
 
-如果您的远程主机位于代理的后面，您可能需要在SSH主机上设置HTTP_PROXY或HTTPS_PROXY环境变量。打开你的~ /。bashrc文件添加以下内容(替换proxy.fqdn.or。ip:3128，并提供适当的主机名/ ip和端口)：
+如果您的远程主机位于代理的后面，您可能需要在 SSH 主机上设置 `HTTP_PROXY` 或 `HTTPS_PROXY` 环境变量。打开你的 `~/.bashrc` 文件添加以下内容（替换 `proxy.fqdn.or.ip:3128` 为适当的 `hostname/IP` 和 `port`）：
 
 ```shell
 export HTTP_PROXY=http://proxy.fqdn.or.ip:3128
@@ -231,61 +228,62 @@ export HTTP_PROXY=http://username:password@proxy.fqdn.or.ip:3128
 export HTTPS_PROXY=$HTTP_PROXY
 ```
 
-##### 1.5.6 使用noexec安装tmp
+##### 1.5.6 使用 noexec 解决 /tmp 挂载
 
-一些远程服务器被设置为不允许从/tmp执行脚本。VS Code将其安装脚本写入系统临时目录，并尝试从那里执行它。您可以与系统管理员一起确定是否可以解决此问题。
+一些远程服务器被设置为不允许从 `/tmp` 执行脚本。VS Code 将其安装脚本写入系统临时目录，并尝试从那里执行它。您可以与系统管理员一起确定是否可以解决此问题。
 
-##### 1.5.7 检查安装期间是否启动了不同的shell
+##### 1.5.7 检查安装期间是否启动了一个不同的 shell
 
-有些用户在SSH主机上启动与.bash_profile或其他启动脚本不同的shell，因为他们希望使用与默认shell不同的shell。这可能会破坏VS Code的远程服务器安装脚本，不建议这样做。相反，使用chsh更改远程机器上的默认shell。
+有些用户在 **SSH 主机**上启动了一个与 `.bash_profile` 或其他启动脚本不同的 shell，因为他们希望使用与默认不同的shell。这可能会破坏 VS Code 的远程服务器安装脚本，不建议这样做。代替的是，使用 `chsh` 更改远程机器上的默认 shell。
 
 ##### 1.5.8 连接到为每个连接动态分配机器的系统
 
-有些系统会在每次建立SSH连接时动态地将SSH连接从集群路由到一个节点。这是 Vs Code 的问题,因为它使两个连接打开一个远程窗口:第一个安装或启动 Vs Code 服务器(或找到一个已经运行的实例)和第二创建SSH端口隧道 Vs Code 使用与服务器。如果 Vs Code 在创建第二个连接时路由到另一台机器，那么它将无法与 Vs Code 服务器通信。
+有些系统会在每次建立 SSH 连接时动态地将 SSH 连接从集群路由到一个节点。这是 Vs Code 的问题,因为它使两个连接打开一个远程窗口：第一个安装或启动 Vs Code 服务器(或找到一个已经运行的实例)和第二创建 SSH 端口隧道 Vs Code 使用与服务器。如果 Vs Code 在创建第二个连接时路由到另一台机器，那么它将无法与 Vs Code 服务器通信。
 
-对此的一种解决方案是在OpenSSH(仅macOS/Linux客户机)中使用ControlMaster选项，该选项在启用备用SSH身份验证方法中进行了描述，这样 Vs Code 的两个连接将通过同一个节点的单个SSH连接进行多路传输。
+对此的一种解决方案是在 OpenSSH(仅 macOS/Linux client) 中使用 `ControlMaster` 选项，该选项在启用备用 SSH 身份验证方法中进行了描述，这样 Vs Code 的两个连接将通过同一个节点的单个 SSH 连接进行多路传输。
 
 ##### 1.5.9 请与系统管理员联系以获得配置帮助
 
-SSH是一种非常灵活的协议，支持多种配置。如果在登录终端或远程ssh输出窗口中看到其他错误，可能是由于缺少设置造成的。
+SSH 是一种非常灵活的协议，支持多种配置。如果在登录终端或远程 ssh 输出窗口中看到其他错误，可能是由于缺少设置造成的。
 
-有关SSH主机和客户机所需设置的信息，请与系统管理员联系。可以将连接到SSH主机的特定命令行参数添加到SSH配置文件中。
+有关 SSH 主机和客户机所需设置的信息，请与系统管理员联系。可以将连接到SSH主机的特定命令行参数添加到SSH配置文件中。
 
-要访问配置文件，请运行Remote-SSH: Open Configuration file…在命令面板(F1)中。然后，您可以与管理员一起添加必要的设置。
+要访问配置文件，请在命令面板(F1)中运行 `Remote-SSH: Open Configuration file…`。然后，您可以与管理员一起添加必要的设置。
 
-#### 1.6启用备用SSH身份验证方法
+#### 1.6启用备用 SSH 身份验证方法
 
-如果您正在连接到SSH远程主机，并且是:
+如果您正在连接到 SSH 远程主机，并且是:
 
-与双因素身份验证连接，
-使用密码身份验证,
-当SSH代理不运行或无法访问时，使用带有密码的SSH密钥，
-… Vs Code 应该自动提示您输入所需的信息。如果没有看到提示符，请启用remote.SSH。showLoginTerminal设置在 Vs Code 。当 Vs Code 运行SSH命令时，此设置将显示终端。然后，当终端出现时，您可以输入您的auth代码、密码或密码。
+- 与双因素身份验证连接，
+- 使用密码身份验证,
+- 当 SSH 代理不运行或无法访问时，使用带有密码的SSH密钥，
 
-但是，由于vscode-remote-release#642，可能会多次提示您输入此信息。在macOS和Linux上，可以通过在本地机器上启用ControlMaster特性来避免这个问题，这样OpenSSH就可以在一个连接上运行多个SSH会话。使ControlMaster:
+… Vs Code 应该自动提示您输入所需的信息。如果没有看到提示符，请在 Vs Code 设置中启用 `remote.SSH.showLoginTerminal`。当 Vs Code 运行 SSH 命令时，此设置将显示终端。然后，当终端出现时，您可以输入您的认证代码、密码或通行码。
 
-在SSH配置文件中添加这样一个条目：
+但是，由于 [vscode-remote-release#642](https://github.com/microsoft/vscode-remote-release/issues/642)，可能会多次提示您输入此信息。在 macOS 和 Linux 上，可以通过在本地机器上启用 `ControlMaster` 特性来避免这个问题，这样 OpenSSH 就可以在一个连接上运行多个 SSH 会话。启用 `ControlMaster`:
 
-```txt
-Host *
-    ControlMaster auto
-    ControlPath  ~/.ssh/sockets/%r@%h-%p
-    ControlPersist  600
-```
+1. 在 SSH 配置文件中添加这样一个条目：
 
-然后运行mkdir -p ~/。ssh/sockets创建套接字文件夹。
+    ```txt
+    Host *
+        ControlMaster auto
+        ControlPath  ~/.ssh/sockets/%r@%h-%p
+        ControlPersist  600
+    ```
 
-启用ControlMaster后，您只需输入一次auth代码/密码/密码短语。
+2. 然后运行 `mkdir -p ~/.ssh/sockets` 创建套接字文件夹。
 
-#### 1.7 设置SSH代理
+启用 `ControlMaster` 后，您只需输入一次认证代码/密码/通行码。
 
-如果使用带密码的密钥连接到SSH主机，应该确保SSH代理在本地运行。 Vs Code 将自动将您的密钥添加到代理，这样您就不必每次打开远程 Vs Code 窗口时都输入密码。
+#### 1.7 设置 SSH 代理
 
-要验证代理正在运行并且可以从 Vs Code 的环境中访问，可以在本地 Vs Code 窗口的终端中运行ssh-add -l。您应该看到代理中键的列表(或者没有键的消息)。如果代理没有运行，请按照以下指示启动它。启动代理之后，请确保重新启动 Vs Code 。
+如果使用带密码的密钥连接到 SSH 主机，应该确保 SSH 代理在本地运行。Vs Code 将自动将您的密钥添加到代理，这样您就不必每次打开远程 Vs Code 窗口时都输入密码。
 
-##### 1.7.1 窗口:
+要验证代理正在运行并且可以从 Vs Code 的环境中访问，可以在本地 Vs Code 窗口的终端中运行 `ssh-add -l`。您应该看到代理中键的列表(或者没有键的消息)。如果代理没有运行，请按照以下指示启动它。启动代理之后，请确保重新启动 Vs Code 。
 
-要在Windows上自动启用SSH代理，请以管理员身份启动PowerShell并运行以下命令：
+##### 1.7.1 Windows:
+
+要在 Windows 上自动启用 SSH 代理，请以**管理员身份**启动 PowerShell 并运行以下命令：
 
 ```shell
 # Make sure you're running as an Administrator
@@ -298,13 +296,13 @@ Get-Service ssh-agent
 
 ##### 1.7.2 Linux:
 
-要在后台启动SSH代理，运行：
+要在后台启动 SSH 代理，运行：
 
 ```shell
 eval "$(ssh-agent -s)"
 ```
 
-要在登录时自动启动SSH代理，请将以下行添加到~/.bash_profile：
+要在登录时自动启动 SSH 代理，请将以下行添加到 `~/.bash_profile`：
 
 ```bash
 if [ -z "$SSH_AUTH_SOCK" ]
@@ -322,27 +320,28 @@ fi
 
 ##### 1.7.3 macOS:
 
-默认情况下，代理应该在macOS上运行。
+默认情况下，代理应该在 macOS 上运行。
 
-#### 1.8 修复SSH文件权限错误
+#### 1.8 修复 SSH 文件权限错误
 
-SSH可以严格控制文件权限，如果设置不正确，您可能会看到诸如“警告:不受保护的私钥文件!”有几种方法可以更新文件权限来解决这个问题，下面的小节将对此进行描述。
+SSH 可以严格控制文件权限，如果设置不正确，您可能会看到诸如 `"WARNING: UNPROTECTED PRIVATE KEY FILE!"` 的错误，有几种方法可以更新文件权限来解决这个问题，下面的小节将对此进行描述。
 
-#### 1.9 本地SSH文件和文件夹权限
+#### 1.9 本地 SSH 文件和文件夹权限
 
-##### 1.9.1 macOS / Linux:
+##### 1.9.1 macOS / Linux：
 
 在本地计算机上，请确保设置了以下权限：
 
-Folder / File	Permissions
-.ssh in your user folder	chmod 700 ~/.ssh
-.ssh/config in your user folder	chmod 600 ~/.ssh/config
-.ssh/id_rsa.pub in your user folder	chmod 600 ~/.ssh/id_rsa.pub
-Any other key file	chmod 600 /path/to/key/file
+|Folder / File | Permissions |
+|--|--|
+|`.ssh` in your user folder|`chmod 700 ~/.ssh`|
+|`.ssh/config` in your user folder|`chmod 600 ~/.ssh/config`|
+|`.ssh/id_rsa.pub` in your user folder|`chmod 600 ~/.ssh/id_rsa.pub`|
+|Any other key file|`chmod 600 /path/to/key/file`|
 
-##### 1.9.2 窗口:
+##### 1.9.2 Windows：
 
-特定的预期权限可以根据您使用的SSH实现的具体情况而变化。我们强烈建议使用开箱即用的Windows 10 OpenSSH客户机。如果您正在使用这个官方客户端，请在administrator PowerShell窗口中剪切并粘贴以下内容，以尝试修复您的权限：
+特定的预期权限可以根据您使用的 SSH 实现的具体情况而变化。我们强烈建议使用开箱即用的 [Windows 10 OpenSSH Client](https://docs.microsoft.com/windows-server/administration/openssh/openssh_overview)。如果您正在使用这个官方客户端，请在 **administrator PowerShell 窗口**中剪切并粘贴以下内容，以尝试修复您的权限：
 
 ```shell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
@@ -355,59 +354,62 @@ Get-ChildItem ~\.ssh\* -Include "id_rsa","id_dsa" -ErrorAction SilentlyContinue 
 }
 ```
 
-对于所有其他客户端，请参考客户端文档了解实现的期望。但是，请注意，并非所有SSH客户机都可以工作。
+对于所有其他 Client，请参考您的 Client 文档了解要实现的期望。但是，请注意，并非所有 SSH Client 都可以工作。
 
-#### 1.10 服务器SSH文件和文件夹权限
+#### 1.10 Server SSH 文件和文件夹权限
 
 在要连接的远程计算机上，请确保设置了以下权限：
 
-Folder / File	Linux / macOS Permissions
-.ssh in your user folder on the server	chmod 700 ~/.ssh
-.ssh/authorized_keys in your user folder on the server	chmod 600 ~/.ssh/authorized_keys
+|Folder / File|Linux / macOS Permissions|
+|--|--|
+|`.ssh` in your user folder on the server|`chmod 700 ~/.ssh`|
+|`.ssh/authorized_keys` in your user folder on the server|`chmod 600 ~/.ssh/authorized_keys`|
 
-注意，目前只支持Linux主机，这就是为什么省略了macOS和Windows 10的权限。
+注意，目前只支持 Linux 主机，这就是为什么省略了 macOS 和 Windows 10 的权限。
 
-#### 1.11 安装受支持的SSH客户机
+#### 1.11 安装一个受支持的 SSH Client
 
-OS	Instructions
-Windows 10 / Server 2016	Install the Windows OpenSSH Client.
-Earlier Windows	Install Git for Windows.
-macOS	Comes pre-installed.
-Debian/Ubuntu	Run sudo apt-get install openssh-client
-RHEL / Fedora / CentOS	Run sudo yum install openssh-clients
+|OS|Instructions|
+|--|--|
+|Windows 10 / Server 2016|Install the [Windows OpenSSH Client](https://docs.microsoft.com/windows-server/administration/openssh/openssh_install_firstuse).|
+|Earlier Windows|Install [Git for Windows](https://git-scm.com/download/win).|
+|macOS|Comes pre-installed.|
+|Debian/Ubuntu|Run `sudo apt-get install openssh-client`|
+|RHEL / Fedora / CentOS|Run `sudo yum install openssh-clients`|
 
- Vs Code 将在路径中寻找ssh命令。如果做不到这一点，它将尝试在Windows安装路径的默认Git中找到ssh.exe。您还可以通过添加remote.SSH来明确告诉 Vs Code 在哪里可以找到SSH客户机。path属性设置为settings.json。
+ Vs Code 将在路径中寻找 `ssh` 命令。如果没有找到，在 Windows 上它将尝试从 Windows 安装路径的默认 Git 中选择 `ssh.exe`。您还可以通过添加 `remote.SSH.path` 属性设置到 `settings.json` 来明确告诉 Vs Code 在哪里可以找到 SSH Client。
 
-#### 1.12 安装受支持的SSH服务器
+#### 1.12 安装一个受支持的 SSH Server
 
-OS	Instructions	Details
-Debian 8+ / Ubuntu 16.04+	Run sudo apt-get install openssh-server	See the Ubuntu SSH documentation for details.
-RHEL / CentOS 7+	Run sudo yum install openssh-server && sudo systemctl start sshd.service && sudo systemctl enable sshd.service	See the RedHat SSH documentation for details.
-SuSE 12+ / openSUSE 42.3+	In Yast, go to Services Manager, select "sshd" in the list, and click Enable. Next go to Firewall, select the Permanent configuration, and under services check sshd.	See the SuSE SSH documentation for details.
-Windows	Not supported yet.	
-macOS	Not supported yet.	
+|OS|Instructions|Details|
+|--|--|--|
+|Debian 8+ / Ubuntu 16.04+|Run `sudo apt-get install openssh-server`|See the [Ubuntu SSH](https://help.ubuntu.com/community/SSH?action=show) documentation for details.|
+|RHEL / CentOS 7+|Run `sudo yum install openssh-server && sudo systemctl start sshd.service && sudo systemctl enable sshd.service`|See the [RedHat SSH](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-openssh) documentation for details.|
+|SuSE 12+ / openSUSE 42.3+|In Yast, go to Services Manager, select "sshd" in the list, and click **Enable**. Next go to Firewall, select the **Permanent** configuration, and under services check **sshd**.|See the [SuSE SSH](https://en.opensuse.org/OpenSSH) documentation for details.|
+|Windows|Not supported yet.|
+|macOS|Not supported yet.|
 
-#### 1.13 解决在SSH主机上执行Git推送或同步时挂起的问题
+#### 1.13 解决在 SSH 主机上执行 Git push 或 sync 时挂起的问题
 
-如果您使用SSH克隆Git存储库，并且您的SSH密钥具有密码，那么 Vs Code 的pull和sync特性在远程运行时可能会挂起。
+如果您使用 SSH 克隆 Git 存储库，并且您的 SSH 密钥具有通行码，那么 Vs Code 的 pull 和 sync 特性在远程运行时可能会挂起。
 
-要么使用没有密码的SSH密钥，要么使用HTTPS克隆，要么从命令行运行git push来解决这个问题。
+要么使用没有通行码的 SSH 密钥，要么使用 HTTPS 克隆，要么从命令行运行 `git push` 来解决这个问题。
 
-#### 1.14 使用SSHFS访问远程主机上的文件
+#### 1.14 使用 SSHFS 访问远程主机上的文件
 
-SSHFS是一种基于SFTP构建的安全远程文件系统访问协议。与CIFS / Samba共享相比，它提供了一些优势，因为所需要的只是对机器的SSH访问。
+[SSHFS](https://en.wikipedia.org/wiki/SSHFS) 是一种基于 `SFTP` 构建的安全远程文件系统访问协议。与 `CIFS/Samba` 共享相比，它提供了一些优势，因为所需要的只是对机器的 SSH 访问。
 
-注意:出于性能原因，SSHFS最适合用于单个文件编辑和上载/下载内容。如果需要使用一次性批量读写多个文件的应用程序(如本地源代码控制工具)，rsync是更好的选择。
+> 注意：出于性能原因，`SSHFS` 最适合用于单个文件编辑和上载/下载内容。如果需要使用一次性批量读写多个文件的应用程序(如本地源代码控制工具)，[rsync](https://code.visualstudio.com/docs/remote/troubleshooting#_using-rsync-to-maintain-a-local-copy-of-your-source-code) 是更好的选择。
 
-##### 1.14.1 macOS / Linux:
+##### 1.14.1 macOS / Linux：
 
-在Linux上，可以使用发行版的包管理器安装SSHFS。对于Debian/Ubuntu: sudo apt-get install sshfs
+在 Linux 上，可以使用发行版的包管理器安装 `SSHFS`。对于 `Debian/Ubuntu`：`sudo apt-get install sshfs`
 
-注意:WSL 1不支持FUSE或SSHFS，因此目前针对Windows的指令有所不同。WSL2确实包括FUSE和SSHFS支持，所以很快就会改变。
+> 注意：**WSL 1** 不支持 `FUSE` 或 `SSHFS`，因此目前针对 Windows 的指令有所不同。**WSL2** 确实包括 `FUSE` 和 `SSHFS` 支持，所以很快就会改变。
 
-在macOS上，您可以使用自制程序安装SSHFS: brew install SSHFS另外，如果您不希望使用命令行来安装远程文件系统，您还可以安装SSHFS GUI。
+在 macOS 上，您可以使用 [Homebrew](https://brew.sh/) 安装 `SSHFS`：`brew install sshfs`。另外，如果您不希望使用命令行来安装远程文件系统，您还可以安装 [SSHFS GUI](https://github.com/dstuecken/sshfs-gui)。
 
-要使用命令行，从本地终端运行以下命令(用远程用户和主机名/ IP替换user@hostname)：
+要使用命令行，从本地终端运行以下命令(用远程用户和 hostname/IP 替换 `user@hostname`)：
 
 ```shell
 export USER_AT_HOST=user@hostname
@@ -418,39 +420,36 @@ sshfs "$USER_AT_HOST:" "$HOME/sshfs/$USER_AT_HOST" -ovolname="$USER_AT_HOST" -p 
     -o workaround=nonodelay -o transform_symlinks -o idmap=user  -C
 ```
 
-这将使远程机器上的主文件夹在~/sshfs下可用。完成后，您可以使用OS的Finder / file explorer或使用命令行卸载它：
+这将使远程机器上的主文件夹在 `~/sshfs` 下可用。完成后，您可以使用 OS 的 Finder / file explorer 或使用命令行卸载它：
 
 ```shell
 umount "$HOME/sshfs/$USER_AT_HOST"
 ```
 
-##### 1.14.2 窗口:
+##### 1.14.2 Windows：
 
-遵循以下步骤:
+遵循以下步骤：
 
-在Linux上，将.gitattributes文件添加到您的项目中，以强制Linux和Windows之间保持一致的行尾，以避免由于两个操作系统之间的CRLF/LF差异而导致的意外问题。有关详细信息，请参见解决Git行结束问题。
+1. 在 Linux 上，将 `.gitattributes` 文件添加到您的项目中，以强制 Linux 和 Windows 之间**保持一致的行尾**，以避免由于两个操作系统之间的 `CRLF/LF` 差异而导致的意外问题。有关详细信息，请参见 [解决 Git 行结束问题](https://code.visualstudio.com/docs/remote/troubleshooting#_resolving-git-line-ending-issues-in-wsl-resulting-in-many-modified-files)。
+2. 接下来，使用 [Chocolatey](https://chocolatey.org/) 安装 [SSHFS-Win](https://github.com/billziss-gh/sshfs-win)：`choco install sshfs`
+3. 一旦为 Windows 安装了 `SSHFS`，就可以使用文件资源管理器的 `Map Network Drive...` 选项，路径 `\\sshfs\user@hostname`，其中 `user@hostname` 是您的远程用户和 hostname/IP。您可以使用如下命令提示符编写脚本：`net use /PERSISTENT:NO X: \\sshfs\user@hostname`
+4. 一旦完成，通过右键单击文件资源管理器中的驱动器并选择 **Disconnect** 来断开连接。
 
-接下来，使用Chocolatey: choco install sshfs安装sshfs - win
+#### 1.15 使用 rsync 维护源代码的本地副本
 
-一旦为Windows安装了SSHFS，就可以使用文件资源管理器的Map网络驱动器…路径\\sshfs\user@hostname的选项，其中user@hostname是您的远程用户和主机名/ IP。您可以使用如下命令提示符编写脚本:net use /PERSISTENT:NO X: \\sshfs\user@hostname
-
-一旦完成，通过右键单击文件资源管理器中的驱动器并选择disconnect来断开连接。
-
-#### 1.15 使用rsync维护源代码的本地副本
-
-使用SSHFS访问远程文件的另一种方法是使用rsync将远程主机上文件夹的全部内容复制到本地计算机。rsync命令将确定每次运行时需要更新哪些文件，这比使用scp或sftp等工具要高效和方便得多。如果您确实需要使用多文件或性能密集型的本地工具，那么首先要考虑这一点。
+使用 SSHFS 访问远程文件的另一种方法是使用rsync将远程主机上文件夹的全部内容复制到本地计算机。rsync命令将确定每次运行时需要更新哪些文件，这比使用scp或sftp等工具要高效和方便得多。如果您确实需要使用多文件或性能密集型的本地工具，那么首先要考虑这一点。
 
 rsync命令在macOS上是开箱即用的，可以使用Linux包管理器安装(例如sudo apt-get在Debian/Ubuntu上安装rsync)。对于Windows，您需要使用WSL或Cygwin来访问命令。
 
 要使用该命令，导航到您想要存储同步内容的文件夹，并运行以下命令，将user@hostname替换为远程用户和主机名/ IP，将/remote/source/code/path替换为远程源代码位置。
 
-macOS、Linux或WSL内部：
+macOS、Linux 或 WSL 内部：
 
 ```shell
 rsync -rlptzv --progress --delete --exclude=.git "user@hostname:/remote/source/code/path" .
 ```
 
-或在Windows命令提示符中使用WSL：
+或在 Windows 命令提示符中使用 WSL：
 
 ```shell
 wsl rsync -rlptzv --progress --delete --exclude=.git "user@hostname:/remote/source/code/path" "$(wslpath -a '%CD%')"
@@ -493,6 +492,7 @@ Windows的Docker桌面在大多数设置中都工作得很好，但是有一些�
 如果您仍然有问题，请参阅Docker桌面的Windows故障排除指南。
 
 #### 2.2 在Docker桌面中启用文件共享
+
 VS Code Remote - Containers扩展只能在代码位于与Docker共享的文件夹或驱动器中时自动将源代码挂载到容器中。如果您从非共享位置打开一个开发容器，容器将成功启动，但是工作区将是空的。
 
 要更改Docker的驱动器和文件夹共享设置:
@@ -588,10 +588,11 @@ git config --global core.autocrlf false
 ![container](https://code.visualstudio.com/assets/docs/remote/containers/docker-remove.png)
 选项2:使用Docker CLI选择要删除的容器:
 
-打开本地终端/命令提示符(或者在 Vs Code 中使用本地窗口)。
-键入docker ps -a查看所有容器的列表。
-从该列表中键入docker rm <container id="">以删除容器。</container>
-键入docker image prune以删除任何未使用的图像。
+1. 打开本地终端/命令提示符(或者在 Vs Code 中使用本地窗口)。
+2. 键入docker ps -a查看所有容器的列表。
+3. 从该列表中键入 `docker rm <Container ID>` 以删除容器。
+4. 键入docker image prune以删除任何未使用的图像。
+
 如果docker ps没有提供足够的信息来标识要删除的容器，下面的命令将列出 Vs Code 管理的所有开发容器以及用于生成它们的文件夹。
 
 ```shell
@@ -763,6 +764,7 @@ git config --global core.autocrlf false
 要么使用没有密码的SSH密钥，要么使用HTTPS克隆，要么从命令行运行git push来解决这个问题。
 
 ### 4. 扩展提示
+
 虽然许多扩展可以不加修改地工作，但是有一些问题会阻止某些特性按预期工作。在某些情况下，可以使用另一个命令来解决这个问题，而在其他情况下，可能需要修改扩展名。本节为常见问题和解决这些问题的技巧提供快速参考。您还可以参考关于支持远程开发的主要扩展文章，以获得关于修改扩展以支持远程扩展主机的深入指南。
 
 #### 4.1 远程应用时，本地绝对路径设置失败
@@ -830,7 +832,7 @@ git config --global core.autocrlf false
 接下来，使用单独的终端/命令提示符连接到远程主机、容器或WSL。
 
 如果是SSH或WSL，则相应地连接到环境(运行SSH连接到服务器或打开WSL终端)。
-如果使用容器，请通过调用docker ps -a来标识容器ID，并在列表中查找具有正确名称的图像。如果容器被停止，运行docker run -it <id> /bin/sh。</id>如果正在运行，运行docker exec - <id> /bin/sh。</id>
+如果使用容器，请通过调用docker ps -a来标识容器ID，并在列表中查找具有正确名称的图像。如果容器被停止，运行`docker run -it <id> /bin/sh`。如果正在运行，运行 `docker exec - <id> /bin/sh`。
 连接好后，运行rm -rf ~/。用于 Vs Code 稳定和/或rm -rf ~/的vscode-server/扩展。vscode-server-insider /扩展，用于 Vs Code 内部人员删除所有扩展。
 
 #### 4.11 交付或获取预先构建的本机模块的扩展会失败
