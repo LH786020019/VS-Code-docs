@@ -2,7 +2,7 @@
  * @Author: haoluo
  * @Date: 2019-07-23 19:57:12
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-23 20:19:36
+ * @LastEditTime: 2019-07-24 09:31:31
  * @Description: file content
  -->
 
@@ -36,6 +36,6 @@
 
 ### 2. 问题或反馈
 
-- 参见 [技巧和技巧](https://code.visualstudio.com/docs/remote/troubleshooting) 或 [FAQ](https://code.visualstudio.com/docs/remote/faq)。
+- 参见 [提示和技巧](https://love2.io/@lh786020019/doc/VS-Code-docs/remote/tips_tricks.md) 或 [FAQ](https://love2.io/@lh786020019/doc/VS-Code-docs/remote/faq.md)。
 - 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode-remote) 上搜索。
 - 添加一个 [特性请求](https://aka.ms/vscode-remote/feature-requests) 或 [报告一个问题](https://aka.ms/vscode-remote/issues/new)。

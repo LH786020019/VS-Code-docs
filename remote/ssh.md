@@ -2,7 +2,7 @@
  * @Author: haoluo
  * @Date: 2019-07-23 20:20:08
  * @LastEditors: haoluo
- * @LastEditTime: 2019-07-24 09:23:50
+ * @LastEditTime: 2019-07-24 09:32:13
  * @Description: file content
  -->
 
@@ -34,7 +34,7 @@
     - [9.5 需要在远程 SSH 主机上安装哪些 Linux 包/库？](#95-%e9%9c%80%e8%a6%81%e5%9c%a8%e8%bf%9c%e7%a8%8b-ssh-%e4%b8%bb%e6%9c%ba%e4%b8%8a%e5%ae%89%e8%a3%85%e5%93%aa%e4%ba%9b-linux-%e5%8c%85%e5%ba%93)
     - [9.6 当 VS Code Server 运行在一个 远程机器 / VM 上时，它的连接性要求是什么？](#96-%e5%bd%93-vs-code-server-%e8%bf%90%e8%a1%8c%e5%9c%a8%e4%b8%80%e4%b8%aa-%e8%bf%9c%e7%a8%8b%e6%9c%ba%e5%99%a8--vm-%e4%b8%8a%e6%97%b6%e5%ae%83%e7%9a%84%e8%bf%9e%e6%8e%a5%e6%80%a7%e8%a6%81%e6%b1%82%e6%98%af%e4%bb%80%e4%b9%88)
     - [9.7 我可以在远程 SSH 主机上的源代码上使用本地工具吗？](#97-%e6%88%91%e5%8f%af%e4%bb%a5%e5%9c%a8%e8%bf%9c%e7%a8%8b-ssh-%e4%b8%bb%e6%9c%ba%e4%b8%8a%e7%9a%84%e6%ba%90%e4%bb%a3%e7%a0%81%e4%b8%8a%e4%bd%bf%e7%94%a8%e6%9c%ac%e5%9c%b0%e5%b7%a5%e5%85%b7%e5%90%97)
-    - [9.8 当我只有 SFTP/FTP 文件系统访问我的远程主机(没有shell访问)时，我可以使用 VS Code 吗？](#98-%e5%bd%93%e6%88%91%e5%8f%aa%e6%9c%89-sftpftp-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e8%ae%bf%e9%97%ae%e6%88%91%e7%9a%84%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e6%b2%a1%e6%9c%89shell%e8%ae%bf%e9%97%ae%e6%97%b6%e6%88%91%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8-vs-code-%e5%90%97)
+    - [9.8 当我只有 SFTP/FTP 文件系统访问我的远程主机(没有 shell 访问)时，我可以使用 VS Code 吗？](#98-%e5%bd%93%e6%88%91%e5%8f%aa%e6%9c%89-sftpftp-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e8%ae%bf%e9%97%ae%e6%88%91%e7%9a%84%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e6%b2%a1%e6%9c%89-shell-%e8%ae%bf%e9%97%ae%e6%97%b6%e6%88%91%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8-vs-code-%e5%90%97)
     - [9.9 作为一个扩展作者，我需要做什么？](#99-%e4%bd%9c%e4%b8%ba%e4%b8%80%e4%b8%aa%e6%89%a9%e5%b1%95%e4%bd%9c%e8%80%85%e6%88%91%e9%9c%80%e8%a6%81%e5%81%9a%e4%bb%80%e4%b9%88)
     - [9.10 问题或反馈](#910-%e9%97%ae%e9%a2%98%e6%88%96%e5%8f%8d%e9%a6%88)
 
@@ -269,22 +269,22 @@ Server 和 VS Code Client 之间的所有其他通信都是通过一个经过身
 
 #### 9.7 我可以在远程 SSH 主机上的源代码上使用本地工具吗？
 
-是的。通常，这是通过使用 [SSHFS](https://code.visualstudio.com/docs/remote/troubleshooting#_using-sshfs-to-access-files-on-your-remote-host) 或使用 [rsync](https://code.visualstudio.com/docs/remote/troubleshooting#_using-rsync-to-maintain-a-local-copy-of-your-source-code) 在本地机器上获取文件的副本来完成的。`SSHFS` 挂载远程文件系统非常适合于需要编辑单个文件或浏览源树且不需要使用同步步骤的场景。但是，对于使用诸如批量管理文件的源代码控制工具之类的工具来说，这并不理想。在这种情况下，`rsync` 方法更好，因为您可以在本地机器上获得远程源代码的完整副本。有关详细信息，请参阅提示和技巧。
+是的。通常，这是通过使用 [SSHFS](https://code.visualstudio.com/docs/remote/troubleshooting#_using-sshfs-to-access-files-on-your-remote-host) 或使用 [rsync](https://code.visualstudio.com/docs/remote/troubleshooting#_using-rsync-to-maintain-a-local-copy-of-your-source-code) 在本地机器上获取文件的副本来完成的。`SSHFS` 挂载远程文件系统非常适合于需要编辑单个文件或浏览源树且不需要使用同步步骤的场景。但是，对于使用诸如批量管理文件的源代码控制工具之类的工具来说，这并不理想。在这种情况下，`rsync` 方法更好，因为您可以在本地机器上获得远程源代码的完整副本。有关详细信息，请参阅 [提示和技巧](https://love2.io/@lh786020019/doc/VS-Code-docs/remote/tips_tricks.md)。
 
-#### 9.8 当我只有 SFTP/FTP 文件系统访问我的远程主机(没有shell访问)时，我可以使用 VS Code 吗？
+#### 9.8 当我只有 SFTP/FTP 文件系统访问我的远程主机(没有 shell 访问)时，我可以使用 VS Code 吗？
 
-有些云平台只为开发人员提供远程文件系统访问，而不提供直接的shell访问。 VS Code 远程开发并没有考虑到这个用例，因为它否定了性能和用户体验的好处。
+有些云平台只为开发人员提供远程文件系统访问，而不提供直接的 shell 访问。 VS Code 远程开发并没有考虑到这个用例，因为它否定了性能和用户体验的好处。
 
-但是，通常可以通过将SFTP之类的扩展与Node的远程调试特性相结合来处理这个用例。js、Python、c#或其他。
+但是，通常可以通过将 SFTP 之类的扩展与用于 [Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_remote-debugging)、[Python](https://code.visualstudio.com/docs/python/debugging#_remote-debugging)、[C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) 或其他的远程调试特性相结合来处理这个用例。
 
 #### 9.9 作为一个扩展作者，我需要做什么？
 
- VS Code 扩展API抽象了本地/远程细节，因此大多数扩展无需修改即可工作。然而，给定的扩展可以使用任何节点模块或运行时，在某些情况下可能需要进行调整。我们建议您测试您的扩展，以确保不需要更新。有关详细信息，请参见支持远程开发。
+ VS Code 扩展 API 抽象了本地/远程细节，因此大多数扩展无需修改即可工作。然而，给定的扩展可以使用任何节点模块或运行时，在某些情况下可能需要进行调整。我们建议您测试您的扩展，以确保不需要更新。有关详细信息，请参见 [支持远程开发](https://code.visualstudio.com/api/advanced-topics/remote-extensions)。
 
 #### 9.10 问题或反馈
 
-- 参见提示和技巧或FAQ。
-- 堆栈溢出搜索。
-- 添加特性请求或报告问题。
-- 对我们的文档或 VS Code 本身做出贡献。
-- 详情请参阅我们的投稿指南。
+- 参见 [提示和技巧](https://love2.io/@lh786020019/doc/VS-Code-docs/remote/tips_tricks.md) 或 [FAQ](https://love2.io/@lh786020019/doc/VS-Code-docs/remote/faq.md)。
+- 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode-remote) 上搜索。
+- 添加一个 [特性请求](https://aka.ms/vscode-remote/feature-requests) 或 [报告一个问题](https://aka.ms/vscode-remote/issues/new)。
+- 对 [我们的文档](https://github.com/Microsoft/vscode-docs) 或 [VS Code](https://github.com/Microsoft/vscode) 本身做出贡献。
+- 详情请参阅我们的 [CONTRIBUTING](https://aka.ms/vscode-remote/contributing) 指南。
